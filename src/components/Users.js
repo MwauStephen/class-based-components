@@ -16,7 +16,9 @@ class Users extends Component {
     };
   }
 
-  toggleUsersHandler() {}
+  toggleUsersHandler() {
+    this.setState(true);
+  }
 
   render() {
     return (
