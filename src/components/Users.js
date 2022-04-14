@@ -10,6 +10,10 @@ const DUMMY_USERS = [
 ];
 
 class Users extends Component {
+toggleUsersHandler(){
+  
+}
+
   render() {
     return (
       <div className={classes.users}>
