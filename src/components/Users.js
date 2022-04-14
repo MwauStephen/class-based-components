@@ -23,6 +23,13 @@ class Users extends Component {
   }
 
   render() {
+    const usersList = (
+      <ul>
+        {DUMMY_USERS.map((user) => (
+          <User key={user.id} name={user.name} />
+        ))}
+      </ul>
+    );
     return (
       <div className={classes.users}>
         <button onClick={toggleUsersHandler}>
