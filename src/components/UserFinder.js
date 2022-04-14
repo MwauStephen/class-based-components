@@ -39,7 +39,7 @@ class UserFinder extends Component {
   render() {
     return (
       <Fragment>
-        <UsersContext>
+        <UsersContext.Consumer>
           <div className={classes.finder}>
             <input
               type="search"
@@ -47,7 +47,7 @@ class UserFinder extends Component {
             />
           </div>
           <Users users={this.state.filteredUsers} />
-        </UsersContext>
+        </UsersContext.Consumer>
       </Fragment>
     );
   }
