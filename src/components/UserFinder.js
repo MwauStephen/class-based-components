@@ -17,6 +17,11 @@ class UserFinder extends Component {
       searchTerm: "",
     };
   }
+  searchChangeHandler(event) {
+    this.setState({
+      searchTerm: event.target.value,
+    });
+  }
 
   render() {
     return (
