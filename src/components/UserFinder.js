@@ -24,12 +24,14 @@ class UserFinder extends Component {
   }
 
   //   using effects in classes
-  componentDidUpdate() {
-    this.setState({
-      filteredUsers: DUMMY_USERS.filter((user) =>
-        user.name.includes(searchTerm)
-      ),
-    });
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.searchTerm !== this.state.searchTerm) {
+      this.setState({
+        filteredUsers: DUMMY_USERS.filter((user) =>
+          user.name.includes(this.state.searchTerm)
+        ),
+      });
+    }
   }
 
   render() {
