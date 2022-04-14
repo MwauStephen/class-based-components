@@ -11,6 +11,7 @@ import Users from "./Users";
 // ];
 
 class UserFinder extends Component {
+  static contextType = UsersContext;
   constructor() {
     super();
     this.state = {
