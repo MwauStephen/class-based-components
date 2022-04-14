@@ -23,6 +23,15 @@ class UserFinder extends Component {
     });
   }
 
+  //   using effects in classes
+  componentDidUpdate() {
+    this.setState({
+      filteredUsers: DUMMY_USERS.filter((user) =>
+        user.name.includes(searchTerm)
+      ),
+    });
+  }
+
   render() {
     return (
       <Fragment>
