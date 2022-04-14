@@ -9,9 +9,16 @@ const DUMMY_USERS = [
   { id: "u3", name: "Julie" },
 ];
 
-class Users extends Component{
-  render(){
-    
+class Users extends Component {
+  render() {
+    return (
+      <div className={classes.users}>
+        <button onClick={toggleUsersHandler}>
+          {showUsers ? "Hide" : "Show"} Users
+        </button>
+        {showUsers && usersList}
+      </div>
+    );
   }
 }
 
