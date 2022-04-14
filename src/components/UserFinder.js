@@ -41,7 +41,7 @@ class UserFinder extends Component {
         <div className={classes.finder}>
           <input type="search" onChange={this.searchChangeHandler.bind(this)} />
         </div>
-        <Users users={this.filteredUsers} />
+        <Users users={this.state.filteredUsers} />
       </Fragment>
     );
   }
