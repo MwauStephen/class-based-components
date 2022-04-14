@@ -17,6 +17,17 @@ class UserFinder extends Component {
       searchTerm: "",
     };
   }
+
+  render() {
+    return (
+      <Fragment>
+        <div className={classes.finder}>
+          <input type="search" onChange={searchChangeHandler} />
+        </div>
+        <Users users={filteredUsers} />
+      </Fragment>
+    );
+  }
 }
 
 const UserFinder = () => {
