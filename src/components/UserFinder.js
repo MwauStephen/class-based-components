@@ -15,7 +15,7 @@ class UserFinder extends Component {
   constructor() {
     super();
     this.state = {
-      filteredUsers: DUMMY_USERS,
+      filteredUsers: [],
       searchTerm: "",
     };
   }
@@ -30,7 +30,7 @@ class UserFinder extends Component {
     // if guard prevents the infinite loop
     if (prevState.searchTerm !== this.state.searchTerm) {
       this.setState({
-        filteredUsers: DUMMY_USERS.filter((user) =>
+        filteredUsers: this.context.users.filter((user) =>
           user.name.includes(this.state.searchTerm)
         ),
       });
@@ -47,8 +47,8 @@ class UserFinder extends Component {
               onChange={this.searchChangeHandler.bind(this)}
             />
           </div>
-          <Users users={this.state.filteredUsers} />
         </UsersContext.Consumer>
+        <Users users={this.state.filteredUsers} />
       </Fragment>
     );
   }
